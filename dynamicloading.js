@@ -34,17 +34,32 @@ function showCustomer(str, caller) {
     // document.getElementById(str).innerHTML ="<th class=head-item mbr-fonts-style display-7>Name of Indl. Plot</th><th class=head-item mbr-fonts-style display-7>Total extent of land (cent)</th><th class=head-item mbr-fonts-style display-7>Total allottable land (cent)</th><th class=head-item mbr-fonts-style display-7>Total allotted land (cent)</th><th class=head-item mbr-fonts-style display-7>Ashish is best</th></tr>";
 
   }
+  function sendMail(){
+    console.log("in sendMail\n");
+    var form = new FormData(document.getElementById("form1"));
+    var xhr =  new XMLHttpRequest();
+    xhr.open("post", "sendmail.php", true);
+    xhr.setRequestHeader("Content-type", "text/plain");
+    xhr.send("data:"+ "ashish");
+
+    if (this.readyState == 4 && this.status == 200) {//if result successful
+        update(ourData, str);
+        // document.getElementById(str).innerHTML = xhr.responseText;
+        // console.log(ourData+ " hell");
+        // return ourData;
+    }
+    return false;
+   
+  }
+//   object = document.getElementById("form1");
+//   object.addEventListener("submit", sendMail());
 
   function update(ourData, str){
     var newstr = str.split(":");
     document.getElementById(newstr[0]).innerHTML = ourData[0];
-    console.log(ourData[0]+ " \n\n\n\n");
     document.getElementById(newstr[1]).innerHTML = ourData[1];
-    console.log(ourData[1]+ " \n\n\n\n");
     document.getElementById(newstr[2]).innerHTML = ourData[2];
-    console.log(ourData[2]+ " \n\n\n\n");
     document.getElementById(newstr[3]).innerHTML = ourData[3];
-    console.log(ourData[3]+ " \n\n\n\n");
     // document.getElementById(newstr[i]).innerHTML =  ourData[2].toUpperCase()+" ";
     // document.getElementById(newstr[i]).innerHTML =  ourData[3];
 
