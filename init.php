@@ -1,7 +1,8 @@
 <?php
 
-    // header("Access-Control-Allow-Origin: *");    
-    $db_name = "mysql";
+
+    header("Access-Control-Allow-Origin: *");    
+    $db_name = "data_db";
     $user_name = "root";
     $user_pass = "";
     $server_name = "localhost";
@@ -11,10 +12,12 @@
     
     if(!$con)
     {
-         // echo json_encode(array("response"=>"Cannot connect to database. ".mysqli_connect_error()));
+       // echo json_encode(array("response"=>"Cannot connect to database. ".mysqli_connect_error()));
     }
     else
     {
-        // echo "success";
+
+         // echo json_encode(array("response"=>"Cannot connect to database. ".mysqli_connect_error()));
     }
+   
 ?>
